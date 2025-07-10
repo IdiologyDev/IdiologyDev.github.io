@@ -1,63 +1,64 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-.nowrap {
-  white-space: nowrap;
-}
-
-html {
-  scroll-behavior: smooth;
+:root {
+  --top-color: #000000;
+  --primary-color: #1B1B1B;
+  --bottom-color: #222;
+  --secondary-color: #00a2ff;
 }
 
 body {
-  font-family: "JetBrains Mono", monospace;
-  background-color: black;
+  width:100%;
+  margin: 0;
+  padding: 0;
+  background-color:var(--primary-color);
   color: white;
 }
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: #010101;
-  color: white;
-  display: flex;
+
+.banner {
+  user-select: none;
+  margin: 0;
+  display:flex;
   flex-direction: column;
   align-items: center;
-  align-content: center;
-  justify-content: space-between;
-  text-align: center;
-  gap: 1rem;
-  padding: 1rem;
-  border-bottom: 2px solid white;
-  padding-bottom: 1rem;
-}
-
-.projects-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.project-gif {
+  justify-content: center; 
+  height: 11rem;
+  background-color: var(--top-color);
+  top: 0;
   position: relative;
-  width: 30rem;
-  perspective: 1000px;
-  will-change: transform;
-  transition: transform 0.3s;
-  max-width: 100%;
-  height: auto;
 }
 
-.projects-container {
+.banner h1 {
+  font-size: 7rem;
+  color:var(--secondary-color);
+}
+
+.banner-line {
+  position: absolute;
+  top: 80%;
+  width: 48%;
+  height: 0.4rem; 
+  background-color: var(--secondary-color);
+  margin: 0 auto;
+}
+
+.Home-Page {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+.Home-Page h2 {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+.flex-grid {
   margin: 0 0;
   background-color:rgb(27,27,27);
-  display: grid;
+  display: flex;
   flex-wrap: wrap;
-  
-  max-width: 80%;
+  justify-content: space-evenly;
+  max-width: 100%;
   gap: 4rem 3rem; 
   padding-top:2rem;
   padding-left: 4rem;
@@ -65,65 +66,136 @@ header {
   padding-bottom: 2rem;
 }
 
-.credits-image {
+.credits-grid {
+  margin: 0 0;
+  background-color:rgb(27,27,27);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 100%;
+  gap: 4rem 3rem; 
+  padding-top:2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-bottom: 2rem;
+}
+
+.project-container {
   position: relative;
   width: 30rem;
+  /* height: 20rem; */
   perspective: 1000px;
   will-change: transform;
-  transition: transform 0.3s;
-  max-width: 100%;
-  height: auto;
+  transition: transform 0.5s;
 }
 
-.project-gif ul {
+
+.project-container ul {
   padding-left: 1.5rem
+  /* padding:0.2rem; */
 }
 
-.project-gif li {
+.project-container li {
   font-size:1.3rem;
   line-height: 2.0rem;
 }
 
+.image-link {
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0rem;
+  width: 100%;
+  height: 20rem;
+  box-sizing: content-box;
+}
+
 @media (max-width: 1000px) {
-  .project-gif {
+  .project-container {
     width: 50rem;
+  }
+
+  .image-link {
+    height: 33rem;
   }
 }
 
-.project {
-  border: 1px solid #4d4747;
-  border-radius: 12px;
-  padding: 1.5rem;
-  background-color: #393636;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.project-image {
+  padding:0;
+  box-sizing: border-box;
+  border: 0.4rem solid transparent; 
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: scale(1.025);
+  transition: transform 0.4s ease, border 0.2s ease;
+
+
 }
 
-.project h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+.project-image:hover{
+  border: 0.2rem solid var(--secondary-color); 
+  transform: scale(1.04);
+}
+
+.title-bar {
+  background-color: rgba(27, 27, 27, 0); 
+  max-width: 100%;
   text-align: center;
+  pointer-events: none;
+}
+.title-bar h2 {
+  height: 5rem;
+  font-weight: normal;
+  font-size: auto;
+  padding:0;
+  margin: 0;
+  text-shadow: 0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.8);
+  font-size: clamp(12px, 5vw, 4vh); /* Shrinks based on viewport */
 }
 
-header nav {
-  font-size: 2em;
+.title-bar h3 {
+    font-weight: normal;
+    font-size: 1.5rem;
 }
 
-header nav ul {
-  list-style: none;
+.credits-image {
+  position: relative;
+  width: 30rem;
+  perspective: 1000px;
+  max-width: 100%;
+  height: auto;
+}
+
+.tags {
+  user-select: none;
+  padding-top: 0.5rem;
   display: flex;
-  gap: 2rem;
-}
-
-header a, header a:visited {
-  color: #000;
+  flex-direction:row;
+  gap: 1rem;
   text-decoration: none;
 }
 
-header a:hover, header a:focus {
-  color: hsla(0, 0%, 50%, 0.7);
+.tags div {
+  background-color: brown;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  margin: 0.8rem 0;
+  display: inline-block;
+  color: white;
+  font-size: 1rem;
+  height:1.1rem
+}
+
+.github-tag {
+  background-color: rgb(95, 24, 102);
+  height:2rem;
+  width:auto;
+  margin-top: 0.5rem;
+  margin-right: 0rem;
+}
+
+.tags a:hover .github-tag{
+  background-color:rgb(192, 2, 192);
 }

@@ -1,86 +1,125 @@
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="source/css/index.css">
-  <title>Isaac C | Programmer</title>
+<link rel="stylesheet" type="text/css" href="source/css/index.css">
+<link rel="stylesheet" type="text/css" href="footer.css">
 </head>
+<body>
 
-  <body>
-    <section id="projects" class="projects-section">
-      <h2>Work</h2>
-      <div class="projects-container">
-         <div class="project">
-         <h3><a href="source/html/Projects/VulkanRenderer.html">Vulkan Rendering System</a></h3>
-          <p>A Vulkan Rendering Framework developed in my spare time.</p>
-        </div>
-        <div class="project">
-          <h3>Unreal Engine Local Multiplayer System</h3>
-          <p>A Split-screen multiplayer system developed for a project by Red Kite Games.</p>
-          <a href="source/html/Projects/UnrealSplitscreenMultiplayer.html">Read More</a>
-        </div>
-        <div class="project">
-          <h3>Unreal Engine Combo System</h3>
-            <p>An animation driven combo system made in Unreal Engine 5.</p>
-          <div class = "project-image">
-            <a class="image-link" href="source/html/Projects/UnrealComboSystem.html">
-            <img class="project-gif" src="assets/gifs/UE5 Combat.gif"></a>
-          </div>
-        </div>
-        <div class="project">
-          <h3>Snake Party</h3>
-          <p>A Sumo Digital game developed for Sheffield Wednesday. Created the Level Editor, UI system and several tools pipelines.</p>
-          <a href="source/html/Projects/SnakeParty.html">Read More</a>
-        </div>
-        <div class="project">
-          <h3>Jet Set Crash</h3>
-          <p>A Sumo Digital Academy Project. Created the initial codebase for the Project, worked on several game mechanics and systems.</p>
-          <a href="source/html/Projects/JetSetCrash.html">Read More</a>
-        </div>
-        <div class="project">
-          <h3>Gonkered</h3>
-          <p>A Sumo Digital Academy Project.</p>
-          <div class = "project-image">
-            <a class="image-link" href="source/html/Projects/Gonkered.html">
-            <img class="project-gif" src="assets/gifs/Gonkered.gif"></a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="projects-section">
-      <h2>Credits</h2>
+
+<section class="banner">
+  <h1>Portfolio</h1>
+  <div class="banner-line"></div>
+</section>
+<div class="Home-Page">
+
+    <h2>Projects</h2>
+
+  <div class="flex-grid">
+
+    <!-- VULKAN RENDERER -->
+    <div class = "project-container">
+      <div class="title-bar"><h2>Vulkan Renderer</h2></div>
+      <div class="title-bar"><h3>A custom made rendering engine developed in my spare time</h3></div>
+      <a class="image-link" href="source/html/Projects/VulkanRenderer.html">
+        <img class="project-image" src="assets/gifs/Vulkan Renderer.gif"></a>
+
       <ul>
-        <div class="credits-project"></div>
-        <li>Snake Party (2024) - Sumo Digital</li>
-        <img class="credits-image" src="assets/images/SnakeParty.jpg"></a>
-        </div>
-        <div class="credits-project"></div>
-        <li>Still Wakes The Deep (2024) - Sumo Digital</li>
-        <img class="credits-image" src="assets/images/StillWakesTheDeep.jpg"></a>
-        </div>
+        <li>Mesh Shader functionality with dynamic LODs and culling</li>
+        <li>Texture Array support</li>
+        <li>Deffered Renderer Implementation</li>
+        <li>Compute Shaders</li>
       </ul>
-    </section>
-    <section class="skills-section">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-item">C++</div>
-         <div class="skill-item">C#</div>
-        <div class="skill-item">Python</div>
-        <div class="skill-item">GLSL</div>
-        <div class="skill-item">HLSL</div>
-        <div class="skill-item">UE5</div>
-        <div class="skill-item">Unity</div>
-        <div class="skill-item">Renderdoc</div>
-        <div class="skill-item">Pix</div>
-        <div class="skill-item">Git</div>
-        <div class="skill-item">Perforce</div>
-        <div class="skill-item">Azure DevOps</div>
-        <div class="skill-item">Jira</div>
-      </div>
-    </section>
-  </main>
-</body>
+    </div>
 
-</html>
+    <!-- UNREAL SPLITSCREEN MULTIPLAYER -->
+    <div class = "project-container">
+      <div class="title-bar"><h2>Unreal Engine Split-Screen Multiplayer System</h2></div>
+      <div class="title-bar"><h3>A multiplayer system developed for a project by Red Kite Games</h3></div>
+      <a class="image-link" href="source/html/Projects/UnrealSplitscreenMultiplayer.html">
+      <img class="project-image" src="assets/gifs/UE5 Splitscreen.gif"></a>
+
+      <ul>
+        <li>4 Player Local and Server/Client functionality</li>
+        <li>Adjustable Split-Screen layout</li>
+        <li>Drop-in/Drop-out implementation across all modes</li>
+        <li>Refactored single player game to allow for local multiplayer</li>
+        <li>To be demoed at Gamescom 2025</li>
+      </ul>
+    </div>
+
+    <!-- UNREAL COMBAT SYSTEM -->
+    <div class = "project-container">
+      <div class="title-bar"><h2>Unreal Engine Combat System</h2></div>
+      <div class="title-bar"><h3>An animation driven combo system developed in Unreal Engine 5</h3></div>
+      <a class="image-link" href="source/html/Projects/UnrealComboSystem.html">
+        <img class="project-image" src="assets/gifs/UE5 Combat.gif"></a>
+
+      <ul>
+        <li>Animation tree determined combo routes</li>
+        <li>Light and heavy combo routes with per animation timings</li>
+        <li>Damage and Collisions enabled within animation timestamps</li>
+        <li>Enemy Stagger system and death effect</li>
+      </ul>
+    </div>
+
+    <!-- SNAKE PARTY -->
+    <div class = "project-container">
+      <div class="title-bar"><h2>Snake Party</h2></div>
+      <div class="title-bar"><h3>A multiplayer party game developed for Sheffield Wednesday by the Sumo Digital Academy</h3></div>
+      <a class="image-link" href="source/html/Projects/SnakeParty.html">
+        <img class="project-image" src="assets/gifs/Snake Party.gif"></a>
+
+      <ul>
+        <li>Created Level Editor</li>
+        <li>Optimised rendering by adding Instanced Rendering and View-Frustum Culling</li>
+        <li>Developed Data-Driven UI Systems</li>
+        <li>Created tools pipeline for tutorial system</li>
+      </ul>
+    </div>
+
+    <!-- JET SET CRASH -->
+    <div class = "project-container">
+        <div class="title-bar"><h2>Jet Set Crash</h2></div>
+        <div class="title-bar"><h3>A two player planet racer developed by the Sumo Digital Academy</h3></div>
+        <a class="image-link" href="source/html/Projects/JetSetCrash.html">
+        <img class="project-image" src="assets/gifs/Jet Set Crash.gif"></a>
+
+      <ul>
+        <li>Created initial codebase of the project</li>
+        <li>Developed Planet Jumping mechanic</li>
+        <li>Made in-game Level Editor</li>
+        <li>Optimised collision system</li>
+        <li>Showcased at The National Videogame Museum </li>
+      </ul>
+    </div>
+
+     <!-- GONKQUERED -->
+    <div class = "project-container">
+        <div class="title-bar"><h2>Gonkquered</h2></div>
+        <div class="title-bar"><h3>A real-time strategy game developed at Sumo Digital Academy</h3></div>
+        <a class="image-link" href="source/html/Projects/JetSetCrash.html">
+        <img class="project-image" src="assets/gifs/Gonkquered.gif"></a>
+
+      <ul>
+        <li>Created custom imgui for UI layout</li>
+        <li>Developed bindable input system to allow for changing inputs</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Credits</h2>
+   <div class="credits-grid">
+      <div class="credits-project">
+        <div class="title-bar"><h3>Snake Party (2024) - Sumo Digital</h3></div>
+        <img class="credits-image" src="assets/images/SnakeParty.jpg"></a>
+      </div>
+
+      <div class="credits-project">
+        <div class="title-bar"><h3>Still Wakes The Deep (2024) - Sumo Digital</h3></div>
+        <img class="credits-image" src="assets/images/StillWakesTheDeep.jpg"></a>
+      </div>
+    </div>
+
+</div>
