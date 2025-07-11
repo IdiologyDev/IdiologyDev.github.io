@@ -175,34 +175,22 @@ body {
   height: auto;
 }
 
-.tags {
-  user-select: none;
-  padding-top: 0.5rem;
-  display: flex;
-  flex-direction:row;
-  gap: 1rem;
-  text-decoration: none;
+.technical-experience-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px 12px 0;
+    margin-bottom: 32px;
 }
 
-.tags div {
-  background-color: brown;
-  padding: 0.3rem 0.5rem;
-  border-radius: 5px;
-  margin: 0.8rem 0;
-  display: inline-block;
-  color: white;
-  font-size: 1rem;
-  height:1.1rem
-}
-
-.github-tag {
-  background-color: rgb(95, 24, 102);
-  height:2rem;
-  width:auto;
-  margin-top: 0.5rem;
-  margin-right: 0rem;
-}
-
-.tags a:hover .github-tag{
-  background-color:rgb(192, 2, 192);
+.technical-experience-container {
+    font-size: 1.125rem;
+    color: #000;
+    list-style: none;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #676263;
+    color: #48484f;
+    white-space: nowrap;
+    margin: 0 4px 16px;
+    box-sizing: border-box;
 }
