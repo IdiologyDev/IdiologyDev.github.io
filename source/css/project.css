@@ -170,118 +170,18 @@ ul {
   padding: 0;
 }
 
-.game,
-.placeholder-image {
-    margin: 0 auto;
-    display: block; /* Ensure the images are block-level elements */
-    border: none;
-    overflow: hidden;
+.media-image
+{
+  width: 0.2dvw;
+  height: auto;
 }
 
-
-.arrow {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%); /*Vertically center arrow*/
-  z-index: 2000;
+.media-video iframe
+{
+    width: auto;
+    height: auto;
 }
 
-.left-arrow {
-  left: 1rem;
-  border-width: 3rem 3rem 3rem 0;
-  border-color: transparent white transparent transparent;
-  z-index: 1001;
-}
-
-.right-arrow {
-  right: 1rem;
-  border-width: 3rem 0 3rem 3rem;
-  border-color: transparent transparent transparent white;
-  z-index: 1001;
-}
-
-.arrow-text {
-  position: absolute;
-  transform: translateY(-50%);
-  font-size: 3rem;
-  white-space: nowrap;
-}
-
-.left-arrow .arrow-text {
-  padding: 1.28rem 2rem;
-  margin-top: 0;
-  margin-left: 3.02rem; /* Position the text to the right of the arrow */
-  color: rgb(0, 162, 255);
-  background-color: rgb(0, 0, 0);
-  border-radius: 0 100px 100px 0;
-
-  transform: translateY(-50%) scaleX(0);
-  transform-origin: left center;
-
-}
-
-.left-arrow:hover .arrow-text {
-  transform: translateY(-50%) scaleX(1);
-  transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355, 1.0); 
-}
-
-.right-arrow .arrow-text {
-  padding: 1.28rem 2rem;
-  right: 3.02rem; /* Position the text to the left of the arrow */
-  color: rgb(0, 162, 255);
-  background-color: rgba(0, 0, 0);
-  border-radius: 100px 0 0 100px;
-
-  transform: translateY(-50%) scaleX(0);
-  transform-origin: right center;
-
-}
-
-.right-arrow:hover .arrow-text {
-  transform: translateY(-50%) scaleX(1);
-  transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355, 1.0); 
-}
-
-@media (max-width: 1000px) {
-  .left-arrow, 
-  .right-arrow {
-    display: none;
-  }
-}
-
-
-.tags {
-  padding-top: 0.8rem;
-  display: flex;
-  flex-direction:row;
-  justify-content: center;
-  align-items: center;
-
-  gap: 1rem;
-  text-decoration: none;
-}
-
-.tags div {
-  background-color: rgb(27,27,27);
-  padding: 0.3vw 0.5rem;
-  border-radius: 5px;
-  margin: 0.8rem 0;
-  display: inline-block;
-  color: white;
-  font-size: 2vw;
-  /* height:2.1rem */
-}
-
-.github-tag {
-  background-color: rgb(95, 24, 102);
-  height: 3.5vw;
-  width:auto;
-  margin-top: 0.5rem;
-  margin-right: 0rem;
-}
 
 @media (max-width: 1000px) {
   .github-tag {
@@ -338,8 +238,6 @@ ul {
     padding: 0;
   }
 
-
-  .game,
   .placeholder-image {
     width: 100%; /* Make images full width for mobile */
   }
