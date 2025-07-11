@@ -1,67 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+      <link rel="stylesheet" type="text/css" href="../../css/project.css">
+    </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="source/css/projects.css">
-  <title>Isaac C | Programmer</title>
-</head>
-
-
-<body>
-  <main>
-    <section id="projects" class="projects-section">
-      <h2>Work</h2>
-      <div class="projects-container">
-         <div class="project">
-         <h3>Vulkan Rendering System</h3>
-          <p>TODO</p>
-          <!--<a href="projects/multinav.html">Read More</a>-->
-        </div>
-        <div class="project">
-          <h3>Unreal Engine Local Multiplayer System</h3>
-          <p>TODO</p>
-          <!--<a href="projects/multinav.html">Read More</a>-->
-        </div>
-        <div class="project">
-          <h3>Snake Party</h3>
-          <p>A Sumo Digital game developed for Sheffield Wednesday. Created the Level Editor, UI system and several tool pipelines</p>
-          <a href="html/Projects/SnakeParty.html">Read More</a>
-        </div>
-        <div class="project">
-          <h3>Jet Set Crash</h3>
-          <p>A Sumo Digital Academy Project. Created the initial codebase for the Project, worked on several game mechanics and systems</p>
-          <!--<a href="projects/animalese.html">Read More</a>-->
-        </div>
+  <!-- HEADER -->
+  <header>
+    <h1>
+      <div class="header-banner">
+      <a href="../../../index.html"><img src="../../../assets/images/HomeIcon.png" alt="Return to home page" class="header-image"></a>
       </div>
-    </section>
-    <section class="projects-section">
-      <h2>Credits</h2>
-      <ul>
-        <li>2024 - Snake Party - Sumo Digital</li>
-        <li>2024 - Still Wakes The Deep - Sumo Digital</li>
-      </ul>
-    </section>
-    <section class="skills-section">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-item">C++</div>
-         <div class="skill-item">C#</div>
-        <div class="skill-item">Python</div>
-        <div class="skill-item">GLSL</div>
-        <div class="skill-item">HLSL</div>
-        <div class="skill-item">UE5</div>
-        <div class="skill-item">Unity</div>
-        <div class="skill-item">Renderdoc</div>
-        <div class="skill-item">Pix</div>
-        <div class="skill-item">Git</div>
-        <div class="skill-item">Perforce</div>
-        <div class="skill-item">Azure DevOps</div>
-        <div class="skill-item">Jira</div>
-      </div>
-    </section>
-  </main>
-</body>
+    </h1>
+  </header>
 
-</html>
+  <!-- BODY -->
+    <body>
+      <div class="main">
+        <section class="project-section">
+          <h1 class="project-title">Vulkan Renderer</h1>
+          <p>
+            The Vulkan Renderer is a project that I have developed in my own time in order to provide a means 
+            to work my own game projects as well as experiment with various rendering techniques and technologies.
+          </p>
+          <h2>Key Features</h2>
+          <ul>
+            <li><b>Mesh Shaders:</b>
+              Mesh Shaders are a new emerging rendering technology that allow triangles to be dynamically created in a shader without having to pass in any vertex data.
+              In order to explore this new technology, I implemented it into my Vulkan Renderer and created shaders to explore per-triangle culling, proceadural terrain generation and dynamic LODs.          
+            </li>
+             <li><b>Texture Arrays:</b>
+              I added in texture arrays in order to have a better way to render sprites that share the same dimensions. While sprites are normally batched into a single files and then rendered by specifying the offsets within a file,
+              using texture arrays means that hundreds or thousands of sprites can be dynamically loaded in/out of memory and inserted/removed from the texture array as needed, which mantains the efficent rendering.          
+            </li>
+             <li><b>Deffered Rendering:</b>
+              As I developed a Vulkan Renderer, I created a Deffered Rendering system that took advantage of Vulkan's Render pass system, meaning that mobile GPUs are optimised for it. This renderer passes in the position, depth, albedo and normals
+              into a set of render targets. These targets are then processed in a seperate pass in order to produce the regular image whist doing lighting calculations on point lights, which allows for more efficent dynamic lighting.
+            </li>
+          </ul>
+          <h2>Reflections</h2>
+          <p> 
+           
+           As this is renderer is being frequently updated to support new functonality, I am continously facing new challenges and learning new things. There were several systems that I had to refactor 
+           when introducing a new feature such as Texture Arrays in order to mantain compability with the exisiting interfaces. Additionally, it took several attempts to find a level of abstraction where 
+           I could produce easy to use interfaces whilst reducing the amount of duplication of code in the backend.
+
+           One feature that I would like to explore next are bindless textures in order to create a fully bindless rendering pipeline.
+
+          </p>
+
+          <h2>Media</h2>
+           <img class="project-image" src="Gif.gif" width="720" height="405">
+          <br></br>
+          <img class="project-image" src="Gif.gif" width="720" height="405">
+        </section>
+      </div>
+
+    </body>
+  </html>

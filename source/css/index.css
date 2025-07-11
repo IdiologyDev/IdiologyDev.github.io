@@ -83,10 +83,16 @@ body {
 .project-container {
   position: relative;
   width: 30rem;
+  background-color: #474242;  /* Background color */
+  border-radius: 15px;        /* Rounded corners */
   /* height: 20rem; */
   perspective: 1000px;
   will-change: transform;
   transition: transform 0.5s;
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
 }
 
 
@@ -143,16 +149,17 @@ body {
   background-color: rgba(27, 27, 27, 0); 
   max-width: 100%;
   text-align: center;
-  pointer-events: none;
 }
 .title-bar h2 {
-  height: 5rem;
+  height: 6vh;
   font-weight: normal;
-  font-size: auto;
   padding:0;
   margin: 0;
   text-shadow: 0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.8);
-  font-size: clamp(12px, 5vw, 4vh); /* Shrinks based on viewport */
+  font-size: clamp(12px, 5vw, 3vh); /* Shrinks based on viewport */
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: white;
 }
 
 .title-bar h3 {
