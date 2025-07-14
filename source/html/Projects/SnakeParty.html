@@ -24,16 +24,24 @@
           <h2>Key Features</h2>
           <ul>
             <li><b>Created Level Editor:</b>
-              In order to help developers iterate on design ideas and test certain features, I created a level editor that allowed users to 
+              In order to help developers iterate on design ideas and test certain features, I created a level editor that allowed users to place objects and light sources in the world and edit the position, rotation and scale of existing objects. 
+              All these items would then be serialised into a json file to load back in. This editor used the command pattern, which allowed for features such as an undo and redo to be added to help optimise development.
             </li>
              <li><b>Optimised rendering by adding Instanced Rendering and View-Frustum Culling:</b>
-              
+              This project initially started using a forward rendering system but later on a deffered renderer was implemented. Because of the uber-shader system the system had in place, some functionality was lost between the transition between forward rendering and
+              deffered rendering. The biggest example of this was instance rendering, so I reconfigured the pipeline to allow for instance rendering in the deffered rendering environment. Additionally, in order to reduce the amount of draw calls sent to the GPU, I added View Frustum Culling
+              to determine whether a mesh was on-screen before it was even drawn an ignore it if it wasn't. This was done by taking the view and projection matrices of the camera and extracting data such as the near plane distance, the far planet distance and the field of view and then creating a frustum 
+              consisting of six planes and then doing an intersection test between the mesh and the frustum.  
             </li>
              <li><b>Developed Data-Driven UI Systems:</b>
-             
+              During the begining of the project, the UI designers wanted the ability to easily create UI layouts without having to recompile the code every time a change was made. To do this, I created a data driven UI system that took json data 
+              from a file and translated it into UI elements on the screen. To implement button specific functionality, key-words were used to indicate the role of a certain button within the json. When the game loaded the json file and created the buttons, it would then
+              map the appropriote function to that buton. As the UI was data-driven, UI elements could be easily serialised, so later in development a UI editor was made. 
             </li>
              <li><b>Created tools pipeline for tutorial system:</b>
-             
+              For the tutorial screen, there needed to be a method of easily laying out each instruction of the tutorial, the video that would be played and any controller images to demonstrate the control scheme. To do this, I created a system where a tutorial could
+              be defined within a json file and then key parts of the layout would specified in this json. When a tutorial screen was loaded, the json file would be parsed and then tutorial screen would auto-format based on the specified information.
+              To make this dynamic, I created the ability to have resizable textboxes and image boxes, meaning that the amount of tutorial instructions could change but the assets on screen would adapt to still fit on screen. 
             </li>
           </ul>
           <h2>Reflections</h2>

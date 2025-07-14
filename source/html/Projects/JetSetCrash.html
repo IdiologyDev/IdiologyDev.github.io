@@ -19,24 +19,31 @@
         <section class="project-section">
           <h1 class="project-title">Jet Set Crash</h1>
           <p>
-            Jet Set Crash is a two player racing game developed by 7 people at the Sumo Digital Academy. 
+            Jet Set Crash is a two player racing game developed by 7 people at the Sumo Digital Academy. Each player would gather their necessary pieces for a rocket ship and then jump to the next planet. They would then repeat the process until one player got to the final planet.
           </p>
           <h2>Key Features</h2>
           <ul>
             <li><b>Created initial codebase of the project:</b>
-             
+             Jet Set Crash was developed from the code I had written for a single player, proceadurally generated planet jumping game. Many of the systems that I created such as planet traversal mechanics, the particle system, the collision system and the menus were used from the initial game that I made 
+             and developed upon. I had to communicate and document how each of the systems worked to other programmers within the team and make sure that my interfaces were designed in such a way where they were easy to use and understand to ensure that development progressed smoothly. 
             </li>
              <li><b>Developed Planet Jumping mechanic:</b>
-              
+              The planet jumping occurs by using bezier curves. The start and end points of the planet jump are determined and two straight lines are created by taking the direction from the centre of each planet to their relevant point.
+              From there, these lines can be interpolated and then a point between those lines can be calculated from their interpolations. Doing this continously forms a smooth curve for the rocket to follow when jumping between planets.
+              In order to create a better feeling or the planet jump, the interpolation followed a sin curve's progression.
             </li>
              <li><b>Made in-game Level Editor:</b>
-             
+             When making each of the planets, the team wanted to make each planet varied in design and layout, which meant frequent iteration and experimentation. To help this, I developed an in-game mode that was in the debug build where developers could enter a state where the player character's 
+             collision was disabled and an option would come up to spawn/despawn objects in the world. This meant that developers could easily add/remove objects in the world to help iterate over different designs for each planet. This data was then serialised so that whenever the game was reloaded, the changes
+             made to each level would persist. This also meant that developers could swap in and out the level files in order to compare different level designs. 
             </li>
              <li><b>Optimised collision system:</b>
-             
+             During the initial planet jumping game that I worked on, there would only ever be objects on the planet the player was on and nothing else. This meant that all that was needed was a collision layer system in order to make sure only objects that could collide with each other did a 
+             broad-phase check. However, because of the change of design, there could be one player on each planet, meaning that the amount of collision checks significantly increased. To reduce this, made it so that each collidable object knew which planet it was on so that collision checks would only occur with
+             objects that were on the same planet. This meant that the collision processing now took a third of the amount of time that it did previously. 
             </li>
             <li><b>Showcased at The National Videogame Museum:</b>
-             
+             This project was demoed at the National Video Game Museum where other developers and students came along to try it out and provided feedback. 
             </li>
           </ul>
           <h2>Reflections</h2>
