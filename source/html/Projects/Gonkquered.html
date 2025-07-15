@@ -19,13 +19,14 @@
         <section class="project-section">
           <h1 class="project-title">Gonkquered</h1>
           <p>
-            My first skills project at the Sumo Digital Academy. 
+            Gonkquered is a local player tactics game where armies of Gonks invade enemy homes in the aim of trying to become the only army left on the field. 
           </p>
           <h2>Key Features</h2>
           <ul>
             <li><b>Single handedly wrote the code whilst using PlayBuffer as a Framework:</b>
              The codebase for this game was developed single handedly over two weeks and the only framework that was used to help development was the PlayBuffer framework, which provided a basic update loop and rendering capabilities. 
-             
+             This meant that I have responsibility over all the gameplay mechanics (sending armies to other houses, upgrading houses, missiles), game logic (transitioning from the menu to the game, pausing the game, going to the next level when a win condition is met)
+             and making sure the correct sprites were rendering at the correct orientation. 
             </li>
              <li><b>Created custom imgui for UI layout:</b>
               In order to create a nice UI layout that was easy to work with, I investigated the ImGui design paradigm as I was initially having to create classes for each individual button, which seemed quite messy. 
@@ -37,17 +38,16 @@
              the same keyboard. To do this, I created an enum with all the different actions a player could do and then mapped that enum to a struct that contained all the player input data. The game would then check whether a particular action could be taken and if the 
              relevant input had occured in order to perform that action. I also made sure that any inputs that were changed were serialised, which allowed player controls to be persistent even after the game had been ended. 
             </li>
-             <li><b>Wrote algorithms to determine the success of a battle:</b>
-             
+             <li><b>Wrote mantainable algorithms to determine the success of a battle:</b>
+             As I was developing the game, I had to make sure that it was possible for me to program and easily edit the algorithms used to determine aspects of the game such as whose army would win in a battle in order to create a balanced and fun experience. 
             </li>
           </ul>
-          <h2>Reflections</h2>
+          <h2>Project Reflections</h2>
           <p> 
-           
+           This project really helped to emphasise the importance of easily accessible and editable code. There were many times within the game where I thought a new feature could be added and I had to redo aspects such as the UI layout or the level, which took time away From
+           implementing the new feature. Once I had established my pipelines for editing different parts of the game and minimised the amount of work that needed to be edited, this very soon became a lot quicker. If I were to develop this further I would look at Data-Driven approaches,
+           so that designers could easily make edits to aspects of the game without even having to recompile or even reload the game.
           </p>
-
-          <h2>Media</h2>
-           <img class="project-image" src="Gif.gif" width="720" height="405">
         </section>
       </div>
 
