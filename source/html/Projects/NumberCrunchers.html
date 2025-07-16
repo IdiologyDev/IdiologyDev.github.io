@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" type="text/css" href="../../css/project.css">
+    </head>
+
+  <!-- HEADER -->
+  <header>
+    <h1>
+      <div class="header-banner">
+      <a href="../../../index.html"><img src="../../../assets/images/HomeIcon.png" alt="Return to home page" class="header-image"></a>
+      </div>
+    </h1>
+  </header>
+
+  <!-- BODY -->
+    <body>
+      <div class="main">
+        <section class="project-section">
+          <h1 class="project-title">Number Crunchers</h1>
+          <p>
+            A solo developed game where the player creates equations that equal the given number.
+          </p>
+          <h2>Key Features</h2>
+          <ul>
+            <li><b>Custom made C++ Framework:</b>
+              Number Crunchers was made in a C++ Framework that I made using libraries such as SDL2, SDL2_Mixer, OpenGL, freeimage, freetype and zlib. 
+              For this project in particular, I had to include a string expression parsing system in order to check the equations, so I used tinyexpr.
+            </li>
+            <li><b>Asset Management System:</b>
+              Whenever an object is created or an item is loaded from a file (e.g. texture), the pointer is added to the relevant map in the AssetManager by using the object's name or file directory as its key, 
+              which prevents items such as textures from having to be reloaded and also means that the AssetManager has a reference to every object within the game. 
+              This allows the AssetManager to manage when an object/item should be destroyed or perform functions such as setting the order that objects should be updated and rendered. 
+            </li>
+            <li><b>Algorithm for checking mathematical equivilency in equations:</b>
+              The main challenge of Number Crunchers was implementing the duplication check as certain expressions may be the same, but structured differently (e.g. 2+4+1-3 and 2-3+4+1). 
+              The solution was to check each individual number and symbol and see if there was an already established solution that matched the amount of times the numbers and symbols appeared (so using the previous example, there are three "+"" and one "-", "1", "2", "3" and "4"). 
+              If there were no matches, then the solution was new. This process works as the game prevents the player from multiplying or dividing by 0, 1 or -1.
+            </li>
+          </ul>
+          <h2>Project Reflections</h2>
+          <p> 
+            While the game is functional with no memory leaks, there are always things that can be optimised to improve the overall performance such as the rendering system and the asset loading. 
+            In particular, I would like to introduce multithreading to improve the processing speeds of certain functions (for example, increasing the amount of images that are loaded into memory at any one time without notably reducing the frame rate). 
+            There are other minor details such as the text rendering not correctly aligning certain characters, but this could be fixed while creating the font texture from the TTF file. 
+            The creation of certain objects such as sprites could also be reduced by introducing object pooling into the AssetManager.
+          </p>
+
+          <h2>Media</h2>
+          <iframe class="media-video" src="https://drive.google.com/file/d/1IkSr-Kz4GQdPVFSR91bevlVxLVMxXzTY/preview" allow="autoplay" title="Number Crunchers Demo">
+         <br></br>
+
+        </section>
+      </div>
+    </body>
+  </html>

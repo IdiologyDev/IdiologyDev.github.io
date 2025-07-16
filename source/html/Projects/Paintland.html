@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" type="text/css" href="../../css/project.css">
+    </head>
+
+  <!-- HEADER -->
+  <header>
+    <h1>
+      <div class="header-banner">
+      <a href="../../../index.html"><img src="../../../assets/images/HomeIcon.png" alt="Return to home page" class="header-image"></a>
+      </div>
+    </h1>
+  </header>
+
+  <!-- BODY -->
+    <body>
+      <div class="main">
+        <section class="project-section">
+          <h1 class="project-title">Paintland</h1>
+          <p>
+           A two day mini-game jam game made in Unity where the aim of each level is to paint the entire floor as quickly as possible.
+          </p>
+          <h2>Key Features</h2>
+          <ul>
+            <li><b>Render Texture painting system:</b>
+              The painting system was created using render textures mapped on a UI canvas. 
+              This UI canvas had a render texture in the background and a set of images that were associated with objects in the world that could paint (e.g. the players paint brush, enemy paint brushes, etc…). 
+              The position of the images on the canvas was proportional to the position of paint objects in relation to the paintable floor. 
+              A camera was set up to render what was on the canvas to a separate render texture. 
+              This render texture would be then copied to the texture of the plane the objects painted on and the render texture in the background of the UI canvas that it was initially rendered from. 
+            </li>
+             <li><b>Compute Shader driven game-logic:</b>
+              In order to determine how much of the floor had been painted by a particular colour, a method of calculating the pixel colour of each part of the texture was needed.
+              As the texture size was significant, it would have been inefficent to do CPU based processing, so instead I decided to use a compute shader and have it sample the texture and if it was a certain colour, add that value to a buffer.
+              This meant that the value of the buffer could then be retrieved during the main processing and that could be used to determine the percentage complete shown on the screen and whether the level was complete.
+            </li>
+            <li><b>Easily adjustable levels:</b>
+              In level three, there are environmental objects that prevent the player from freely moving around. 
+              As these are on the floor, they are unpaintable to the player, so the UI Canvas had to have an image to represent those objects. 
+              In order to allow these environmental objects to be edited freely, the position and size of these objects were calculated in relation to the paintable plane in the first frame of the level and a black image was generated for each of them with the size and position in relation to the UI canvas. 
+              The compute shader would then calculate how much of the UI canvas had a black image and then subtract that from the amount of paintable space.
+            </li>
+          </ul>
+          <h2>Project Reflections</h2>
+          <p> 
+            Due to the method used to create the paint effect, it would be difficult to accurately translate every collision point as a painted spot. 
+            For example, if a paint object were to consistently change shape or size, the image in the UI canvas would have to change to match that, which may be impractical depending on the number of different images that would need to be produced. 
+            Furthermore, the method requires a separate image to be created every time a new object wants to paint on the texture. 
+            This means that if a particle system were to be used where each particle generated a painted spot when colliding with the ground, a new image would have to be generated for each particle. 
+            While methods such as object pooling could be used to reduce the amount of objects being created, the method could still be inefficient. 
+          </p>
+
+          <h2>Media</h2>
+          <iframe class="media-video" src="https://drive.google.com/file/d/1MK0MDfYabkm-2SRyZ62-SR_rD7sEqs0K/preview" allow="autoplay" title="Paintland! Demo">
+         <br></br>
+
+        </section>
+      </div>
+
+    </body>
+  </html>
