@@ -184,12 +184,11 @@ body {
 
 .technical-experience-container {
     font-size: 1.125rem;
-    color: #000;
     list-style: none;
     padding: 8px;
     border-radius: 8px;
-    border: 1px solid #676263;
-    color: #48484f;
+    border: 1px solid #beb9ba;
+    color: #d5d5d8;
     white-space: nowrap;
     margin: 0 4px 16px;
     box-sizing: border-box;
