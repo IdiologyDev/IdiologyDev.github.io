@@ -28,15 +28,15 @@
               All these items would then be serialised into a json file to load back in. This editor used the command pattern, which allowed for features such as an undo and redo to be added to help optimise development.
             </li>
              <li><b>Optimised rendering by adding Instanced Rendering and View-Frustum Culling:</b>
-              This project initially started using a forward rendering system but later on a deffered renderer was implemented. Because of the uber-shader system the system had in place, some functionality was lost between the transition between forward rendering and
-              deffered rendering. The biggest example of this was instance rendering, so I reconfigured the pipeline to allow for instance rendering in the deffered rendering environment. Additionally, in order to reduce the amount of draw calls sent to the GPU, I added View Frustum Culling
+              This project initially started using a forward rendering system but later on a deferred renderer was implemented. Because of the uber-shader system the system had in place, some functionality was lost between the transition between forward rendering and
+              deferred rendering. The biggest example of this was instance rendering, so I reconfigured the pipeline to allow for instance rendering in the deferred rendering environment. Additionally, in order to reduce the amount of draw calls sent to the GPU, I added View Frustum Culling
               to determine whether a mesh was on-screen before it was even drawn an ignore it if it wasn't. This was done by taking the view and projection matrices of the camera and extracting data such as the near plane distance, the far planet distance and the field of view and then creating a frustum 
               consisting of six planes and then doing an intersection test between the mesh and the frustum.  
             </li>
              <li><b>Developed Data-Driven UI Systems:</b>
-              During the begining of the project, the UI designers wanted the ability to easily create UI layouts without having to recompile the code every time a change was made. To do this, I created a data driven UI system that took json data 
+              During the beginning of the project, the UI designers wanted the ability to easily create UI layouts without having to recompile the code every time a change was made. To do this, I created a data driven UI system that took json data 
               from a file and translated it into UI elements on the screen. To implement button specific functionality, key-words were used to indicate the role of a certain button within the json. When the game loaded the json file and created the buttons, it would then
-              map the appropriote function to that buton. As the UI was data-driven, UI elements could be easily serialised, so later in development a UI editor was made. 
+              map the appropriate function to that button. As the UI was data-driven, UI elements could be easily serialised, so later in development a UI editor was made. 
             </li>
              <li><b>Created tools pipeline for tutorial system:</b>
               For the tutorial screen, there needed to be a method of easily laying out each instruction of the tutorial, the video that would be played and any controller images to demonstrate the control scheme. To do this, I created a system where a tutorial could
@@ -47,7 +47,7 @@
           <h2>Project Reflections</h2>
           <p> 
            With this project, it was important to highlight the key areas of the game that needed support in order to get fundamental features in. As I was part of the Core Tech team of this project, it was my responsibility to develop systems that would be used by other members and support them when needed.
-           This meant that I partaked in daily scrums where I would learn about what features other teams wanted and would inform them about features in development. It was because of this that the Level editor, the UI system and the tutorial system came about as they were highlighted as key things that would speed up
+           This meant that I took part in daily scrums where I would learn about what features other teams wanted and would inform them about features in development. It was because of this that the Level editor, the UI system and the tutorial system came about as they were highlighted as key things that would speed up
            development. One thing I would have done differently would be to implement an imGui interface for the level editor so that other developers could adjust object values directly instead of through dragging them and keyboard commands. 
           </p>
 

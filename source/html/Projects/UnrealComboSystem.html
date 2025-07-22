@@ -30,19 +30,19 @@
              such as if the player was in the air. 
             </li>
              <li><b>States driven by animation timings:</b>
-              As each combo has a unique animation, it meant that many aspects of the combo had to be set in each individual animation. These included when input could be recieved to transition to the next animation, which colliders should be enabled, if particle effects should occur and 
+              As each combo has a unique animation, it meant that many aspects of the combo had to be set in each individual animation. These included when input could be received to transition to the next animation, which colliders should be enabled, if particle effects should occur and 
               properties of the colliders such as how much damage they should do. I created a system where these could be set as individual timings in the animation system, meaning that it was easy to edit the properties of each combo in an animation. 
             </li>
              <li><b>Enemy Stagger system and death effect:</b>
-             I created a system where if the enemy took a certain amount of damage within a period of time, they would enter a stagger animation and would recieved more damage. When they run out of health, I added a shader effect to make the enemy dissolve into nothing and then despawn. 
-             The shader effect involed using perlin noise and then setting the alpha value of the material based on a combination of a interpolated value and the sampled value of the perlin noise. 
+             I created a system where if the enemy took a certain amount of damage within a period of time, they would enter a stagger animation and would receive more damage. When they run out of health, I added a shader effect to make the enemy dissolve into nothing and then despawn. 
+             The shader effect involved using perlin noise and then setting the alpha value of the material based on a combination of a interpolated value and the sampled value of the perlin noise. 
             </li>
           </ul>
           <h2>Project Reflections</h2>
           <p> 
            This was my first attempt at developing an Unreal Engine project from scratch with no assistance, so I learnt many things about Unreal Engine's workflow. One thing I really focused on when developing this system was finding the balance between what should be accessible for programmers, 
            designers and artists to edit as it's the type of consideration that would have to be made in a large scale project. While I am satisfied with my implementation, I did find that it would have been beneficial to make some changes to Unreal Engine's editor to help optimise the process of setting up
-           combos and animations, but I chose not to persue that route given the complexity of it and the timescale I had available to work on this project.
+           combos and animations, but I chose not to pursue that route given the complexity of it and the timescale I had available to work on this project.
           </p>
       </div>
 

@@ -30,15 +30,15 @@
             </li>
              <li><b>Created custom imgui for UI layout:</b>
               In order to create a nice UI layout that was easy to work with, I investigated the ImGui design paradigm as I was initially having to create classes for each individual button, which seemed quite messy. 
-              After reasearching this, I created a single header/cpp file that implemented basic UI features such as buttons and images in an ImGui layout and used that to develop the UI system for the game, which made the layout of the code
-              significantly more managable. This PlayBuffer ImGui code is something that I would later go on to use in other PlayBuffer projects.
+              After researching this, I created a single header/cpp file that implemented basic UI features such as buttons and images in an ImGui layout and used that to develop the UI system for the game, which made the layout of the code
+              significantly more manageable. This PlayBuffer ImGui code is something that I would later go on to use in other PlayBuffer projects.
             </li>
              <li><b>Developed bindable input system to allow for changing inputs:</b>
              As this game was developed to be played with multiple people, I wanted players to be able to change the input scheme in order to make the controls more accessible for different people, particularly in the case where two people played together on
              the same keyboard. To do this, I created an enum with all the different actions a player could do and then mapped that enum to a struct that contained all the player input data. The game would then check whether a particular action could be taken and if the 
-             relevant input had occured in order to perform that action. I also made sure that any inputs that were changed were serialised, which allowed player controls to be persistent even after the game had been ended. 
+             relevant input had occurred in order to perform that action. I also made sure that any inputs that were changed were serialised, which allowed player controls to be persistent even after the game had been ended. 
             </li>
-             <li><b>Wrote mantainable algorithms to determine the success of a battle:</b>
+             <li><b>Wrote maintainable algorithms to determine the success of a battle:</b>
              As I was developing the game, I had to make sure that it was possible for me to program and easily edit the algorithms used to determine aspects of the game such as whose army would win in a battle in order to create a balanced and fun experience. 
             </li>
           </ul>

@@ -26,21 +26,21 @@
           <ul>
             <li><b>Mesh Shaders:</b>
               Mesh Shaders are a new emerging rendering technology that allow triangles to be dynamically created in a shader without having to pass in any vertex data.
-              In order to explore this new technology, I implemented it into my Vulkan Renderer and created shaders to explore per-triangle culling, proceadural terrain generation and dynamic LODs.          
+              In order to explore this new technology, I implemented it into my Vulkan Renderer and created shaders to explore per-triangle culling, procedural terrain generation and dynamic LODs.          
             </li>
              <li><b>Texture Arrays:</b>
               I added in texture arrays in order to have a better way to render sprites that share the same dimensions. While sprites are normally batched into a single files and then rendered by specifying the offsets within a file,
-              using texture arrays means that hundreds or thousands of sprites can be dynamically loaded in/out of memory and inserted/removed from the texture array as needed, which mantains the efficent rendering.          
+              using texture arrays means that hundreds or thousands of sprites can be dynamically loaded in/out of memory and inserted/removed from the texture array as needed, which maintains the efficient rendering.          
             </li>
              <li><b>Deffered Rendering:</b>
               As I developed a Vulkan Renderer, I created a Deffered Rendering system that took advantage of Vulkan's Render pass system, meaning that mobile GPUs are optimised for it. This renderer passes in the position, depth, albedo and normals
-              into a set of render targets. These targets are then processed in a seperate pass in order to produce the regular image whist doing lighting calculations on point lights, which allows for more efficent dynamic lighting.
+              into a set of render targets. These targets are then processed in a separate pass in order to produce the regular image whist doing lighting calculations on point lights, which allows for more efficient dynamic lighting.
             </li>
           </ul>
           <h2>Project Reflections</h2>
           <p>          
-           As this is renderer is being frequently updated to support new functonality, I am continously facing new challenges and learning new things. There were several systems that I had to refactor 
-           when introducing a new feature such as Texture Arrays in order to mantain compability with the exisiting interfaces. Additionally, it took several attempts to find a level of abstraction where 
+           As this is renderer is being frequently updated to support new functionality, I am continuously facing new challenges and learning new things. There were several systems that I had to refactor 
+           when introducing a new feature such as Texture Arrays in order to maintain compatibility with the existing interfaces. Additionally, it took several attempts to find a level of abstraction where 
            I could produce easy to use interfaces whilst reducing the amount of duplication of code in the backend.
           </p>
         </section>

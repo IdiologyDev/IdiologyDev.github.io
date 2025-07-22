@@ -32,7 +32,7 @@
             </li>
              <li><b>Compute Shader driven game-logic:</b>
               In order to determine how much of the floor had been painted by a particular colour, a method of calculating the pixel colour of each part of the texture was needed.
-              As the texture size was significant, it would have been inefficent to do CPU based processing, so instead I decided to use a compute shader and have it sample the texture and if it was a certain colour, add that value to a buffer.
+              As the texture size was significant, it would have been inefficient to do CPU based processing, so instead I decided to use a compute shader and have it sample the texture and if it was a certain colour, add that value to a buffer.
               This meant that the value of the buffer could then be retrieved during the main processing and that could be used to determine the percentage complete shown on the screen and whether the level was complete.
             </li>
             <li><b>Easily adjustable levels:</b>
